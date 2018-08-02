@@ -8,6 +8,7 @@ COPY ./domain.crt /
 COPY ./test.js /
 ENV NODE_EXTRA_CA_CERTS=/domain.crt
 
+#Remove this to make it work
 RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/node
 
 USER node
